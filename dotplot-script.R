@@ -1,23 +1,29 @@
-####################################################Dot plot 
-script############################################################
+####################################################Dot plot script############################################################
 ###Version of R used 4.2.0
-library(tidyverse
+library(tidyverse)
 library(ggplot)
 library(readxl)
 Dotplot_dataset <- read_excel("path/Dotplot-dataset.xlsx")
 View(Dotplot_dataset)
-###month data
-DF1 <- Dataset_dot_plot %>%
+###Restructure Dataframe 
+transform1 <- t(Dotplot_dataset)
+transform1 <- as.data.frame(transform1)
+reverse1 <- rev(transform1)
+reverse1 <- t(reverse1)
+Dataset1 <- as.data.frame(reverse1)
+###Add month data
+DF1 <- Dataset1 %>%
   mutate(Month = factor(Month, levels = c("Jun, 20", "Jul, 20", "Sep, 20", 
 "Oct, 20", "Dec, 20", "Jan, 21", "Feb, 21", "Mar, 21", "Apr, 21","May, 
 21", "Jun, 21", "Jul, 21", "Aug, 21", "Sep, 21", "Oct, 21", "Nov, 
 21","Dec, 21", "Jan, 22", "Feb, 22", "Mar, 22", "Apr, 22", "May, 22", 
 "Jun, 22", "Jul, 22", "Aug, 22", "Sep, 22", "Oct, 22", "Nov, 22", "Dec, 
 22", "Jan, 23", "Feb, 23")))
-DF1$Mutations <- factor(DF1$Mutations, levels = unique(DF1$Mutations))
-###Dot plot
-ggplot(DF1, aes(x = Month, y = Mutations, size = Number-of-mutations), 
-show.legend=FALSE) + geom_point(aes(size = Number-of-mutations)) + 
+###Display character vectors in a order of dataframe
+DF1$Mutations <- factor(DF1$Mutations, levels = unique(DF1$No))
+###Run Dot plot
+ggplot(DF1, aes(x = Month, y = Mutations, size = No), 
+show.legend=FALSE) + geom_point(aes(size = No)) + 
 geom_line(aes(group = Mutations, size = 0.1), color = "#606060", 
 show.legend=FALSE) + scale_size_continuous(breaks = c(2, 4, 6, 8, 10, 12, 
 14, 16, 18, 20, 22, 24, 26, 28)) +
