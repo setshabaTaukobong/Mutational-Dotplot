@@ -7,7 +7,7 @@ The SARS-Cov-2 mutational dot plot script helps identify the periods in which ce
 * library(gapminder)
 
 # Instructions
-The mutationhal Dot plot is entirely written in R (V.4.2.0), but requires preprocessing by the following tools:
+The mutational Dot plot is entirely written in R (V.4.2.0), but requires preprocessing before running the script by the following tools:
 * BWA mem (https://github.com/lh3/bwa)
 * iVar (https://github.com/andersen-lab/ivar)
 * samtools (https://github.com/samtools/samtools)
