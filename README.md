@@ -14,7 +14,7 @@ The mutational Dot plot is entirely written in R (V.4.2.0), but requires preproc
 * LoFreq (https://github.com/CSB5/lofreq)
 
 # Instructions
-After running the dependencies and producing the variant calling file, produce the heatmap matrix found on the following link () then produce a heatmap using conditional formatting. The heatmap marix allows for one to see patterns of new emerging patterns. Frm the matrix, filter the emerging mutations and quantify them in a seperate spreadsheet (Dotplot-dataset.xlsx). From there, run the script to produce the dotplot. 
+After running the dependencies and producing the variant calling file, produce the heatmap matrix found on the following link (https://github.com/setshabaTaukobong/Heatmap-Matrix.git) then produce a heatmap using conditional formatting. The heatmap marix allows for one to see patterns of new emerging patterns. Frm the matrix, filter the emerging mutations and quantify them in a seperate spreadsheet (Dotplot-dataset.xlsx). From there, run the script to produce the dotplot. 
 
 
 
